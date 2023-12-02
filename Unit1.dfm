@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 2316
-  Top = 229
+  Left = 2221
+  Top = 207
   Width = 250
   Height = 238
   Caption = 'WAR NET'

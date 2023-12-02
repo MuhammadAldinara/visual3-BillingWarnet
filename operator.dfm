@@ -62,6 +62,7 @@ object Form4: TForm4
     Caption = 'Login'
     TabOrder = 2
     OnClick = Button1Click
+    OnEnter = Button1Click
   end
   object Button2: TButton
     Left = 128

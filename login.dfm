@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 2091
-  Top = 299
+  Left = 2188
+  Top = 284
   Width = 534
   Height = 308
   Caption = 'Login'
@@ -793,6 +793,7 @@ object Form2: TForm2
     Caption = 'Login'
     TabOrder = 2
     OnClick = Button1Click
+    OnEnter = Button1Click
   end
   object Button2: TButton
     Left = 128

@@ -383,7 +383,8 @@ end;
 
 procedure TForm5.Operator1Click(Sender: TObject);
 begin
-close;
+hide;
+Form6.Show;
 
 end;
 

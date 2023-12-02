@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.0.11" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="45263,0750711111" ReportOptions.Description.Text="" ReportOptions.LastChange="45263,0783959606" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403900203546F70022808446174617365747301010C2E00000020446174615365743D22667278646264747374322220446174615365744E616D653D2266727864626474737431220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" Height="98,26778" Left="0" Top="18,89765" Width="793,7013">
+      <TfrxMemoView Name="Memo7" Left="207,87415" Top="34,01577" Width="370,39394" Height="37,7953" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-27" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="LAPORAN DATA BILLING"/>
+    </TfrxReportTitle>
+    <TfrxPageHeader Name="PageHeader1" Height="18,89765" Left="0" Top="139,84261" Width="793,7013">
+      <TfrxMemoView Name="Memo4" Left="128,50402" Top="0" Width="41,57483" Height="18,89765" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" ParentFont="False" Text="NO"/>
+      <TfrxMemoView Name="Memo5" Left="170,07885" Top="0" Width="245,66945" Height="18,89765" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" ParentFont="False" Text="WAKTU"/>
+      <TfrxMemoView Name="Memo6" Left="415,7483" Top="0" Width="238,11039" Height="18,89765" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" ParentFont="False" Text="HARGA"/>
+    </TfrxPageHeader>
+    <TfrxMasterData Name="MasterData1" Height="18,89765" Left="0" Top="219,21274" Width="793,7013" ColumnWidth="0" ColumnGap="0" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="128,50402" Top="0" Width="41,57483" Height="18,89765" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" ParentFont="False" Text="[LINE#]"/>
+      <TfrxMemoView Name="Memo2" Left="170,07885" Top="0" Width="245,66945" Height="18,89765" DataField="waktu" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" ParentFont="False" Text="[frxdbdtst1.&#34;waktu&#34;]"/>
+      <TfrxMemoView Name="Memo3" Left="415,7483" Top="0" Width="238,11039" Height="18,89765" DataField="harga" DataSet="frxdbdtst2" DataSetName="frxdbdtst1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" ParentFont="False" Text="[frxdbdtst1.&#34;harga&#34;]"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="PageFooter1" Height="113,3859" Left="0" Top="298,58287" Width="793,7013">
+      <TfrxMemoView Name="Memo8" Left="377,953" Top="0" Width="49,13389" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[Page#]"/>
+      <TfrxMemoView Name="Memo9" Left="665,19728" Top="0" Width="79,37013" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[Date]"/>
+    </TfrxPageFooter>
+  </TfrxReportPage>
+</TfrxReport>
