@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 477
-  Top = 320
+  Left = 2123
+  Top = 141
   Width = 957
   Height = 519
   Caption = 'WAR NET - USER'
