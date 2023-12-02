@@ -50,9 +50,7 @@ SQL.Add('select * from user where username='+QuotedStr(edt1.Text));
 open;
 end;
 
-//end with
-//jika tidak ditemukan data yang dicari
-//maka tampilkan pesan
+
 
 if zqry1.RecordCount=0
 then
@@ -66,6 +64,12 @@ else
 begin
 hide;
 Form1.Show;
+id:=zqry1.Fields[0].AsString;
+
+Form1.Label1.Caption := zqry1.Fields[4].AsString;
+
+Form1.zqry1.SQL.Text := 'SELECT id_user, username FROM user WHERE username='+QuotedStr(edt1.Text);
+Form1.zqry1.Active := True;
 end;
 end;
 

@@ -5,32 +5,30 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, DB, ZAbstractRODataset, ZAbstractDataset,
-  ZDataset, ZAbstractConnection, ZConnection, Grids, DBGrids;
+  ZDataset, ZAbstractConnection, ZConnection, Grids, DBGrids, Buttons;
 
 type
   TForm1 = class(TForm)
     Label1: TLabel;
-    Button1: TButton;
     tmr1: TTimer;
-    Button4: TButton;
-    Button5: TButton;
-    Button2: TButton;
     con1: TZConnection;
     zqry1: TZQuery;
     ds1: TDataSource;
-    dbgrd1: TDBGrid;
-    Button3: TButton;
-    edt1: TEdit;
+    pnl1: TPanel;
     Label2: TLabel;
+    tmr2: TTimer;
     Label3: TLabel;
+    dbgrd: TDBGrid;
+    Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure tmr1Timer(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure dbgrd1CellClick(Column: TColumn);
     procedure Button3Click(Sender: TObject);
+    procedure tmr2Timer(Sender: TObject);
 //    procedure AddTime;
   private
     { Private declarations }
@@ -50,11 +48,13 @@ uses
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
-//var
-//  updatedTime: string;
 begin
-//  AddTime(Label1.Caption, Label3.Caption);
-  end;
+  
+
+// Menyegarkan data setelah pembaruan
+//zqry1.Refresh;
+
+end;
 
 procedure TForm1.tmr1Timer(Sender: TObject);      
 var
@@ -102,9 +102,8 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-tmr1.Enabled := false;
-  Label1.Enabled := false; // Menampilkan label
-  Label1.Caption := '00:00:00'; // Mengatur teks label awal (misalnya, 1 jam 30 menit 0 detik)
+tmr1.Enabled := true;
+  Label1.Enabled := true; // Menampilkan label
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
@@ -162,35 +161,25 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-tmr1.Enabled := false; // Mengaktifkan timer
-  Label1.Enabled := false; // Menampilkan label
-  //Label1.Caption := '00:00:00'; // Mengatur teks label awal
+tmr1.Enabled := False;
+  id := zqry1.FieldByName('id_user').AsString;
 
-  zqry1.SQL.Clear;
-  zqry1.SQL.Add('Update billing set waktu = "'+Label1.Caption+'" where id = "'+Label2.Caption+'"');
+  // Menyiapkan parameterized query untuk UPDATE
+  zqry1.SQL.Text := 'UPDATE user SET billing = :billing WHERE id_user = :id';
+  zqry1.ParamByName('billing').AsString := Label1.Caption;
+  zqry1.ParamByName('id').AsString := id;
   zqry1.ExecSQL;
 
-  zqry1.SQL.Clear;
-  zqry1.SQL.Add('select * from billing');
-  zqry1.Open;
-  ShowMessage('DATA BERHASIL DIUPDATE!');
-    
-  zqry1.Active:= False;
-  zqry1.Active:= True;
-end;
+  hide;
+  Form2.Show;
 
-procedure TForm1.dbgrd1CellClick(Column: TColumn);
-begin
-id := zqry1.FieldList[0].AsString;
-
-edt1.Text := zqry1.FieldList[1].AsString;
+  Form2.edt1.Text := '';
+  Form2.edt2.Text := '';
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-tmr1.Enabled := True; 
-  Label1.Enabled := True;
-  Label1.Caption := edt1.Text;
+
 end;
 
 //procedure TForm1.AddTime;
@@ -230,5 +219,11 @@ end;
 //  // Menggabungkan hasilnya ke dalam format "jam:menit:detik"
 //  currentTime := Format('%.2d:%.2d:%.2d', [totalHours, totalMinutes, totalSeconds]);
 //end;
+
+procedure TForm1.tmr2Timer(Sender: TObject);
+begin
+Label2.Caption := TimeToStr(time);
+Label3.Caption := DateToStr(Date);
+end;
 
 end.

@@ -288,6 +288,7 @@ object Form5: TForm5
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'localhost'
     Port = 3306
     Database = 'billing_warnet'
@@ -301,6 +302,7 @@ object Form5: TForm5
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from billing')
     Params = <>
@@ -316,6 +318,7 @@ object Form5: TForm5
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'localhost'
     Port = 3306
     Database = 'billing_warnet'
@@ -329,6 +332,7 @@ object Form5: TForm5
   end
   object zqry2: TZQuery
     Connection = con2
+    Active = True
     SQL.Strings = (
       'select * from user')
     Params = <>

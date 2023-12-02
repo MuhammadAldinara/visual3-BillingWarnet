@@ -1,9 +1,9 @@
-object Form6: TForm6
-  Left = 2284
-  Top = 178
+object Form7: TForm7
+  Left = 2160
+  Top = 185
   Width = 928
   Height = 480
-  Caption = 'Form6'
+  Caption = 'kantin'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,10 +14,10 @@ object Form6: TForm6
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 24
-    Top = 24
-    Width = 49
+    Left = 160
+    Top = 40
+    Width = 37
     Height = 13
-    Caption = 'WAR NET '
+    Caption = 'KANTIN'
   end
 end
