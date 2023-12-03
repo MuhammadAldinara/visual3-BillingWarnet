@@ -1,4 +1,4 @@
-unit userInfo;
+unit warnet_inventaris;
 
 interface
 
@@ -9,7 +9,6 @@ uses
 type
   TForm7 = class(TForm)
     Button1: TButton;
-    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -18,18 +17,17 @@ type
   end;
 
 var
-  Form7: TForm7;
+  Form7: TForm7; 
 
 implementation
 
-uses
-  main_operator;
+uses Math, userInfo, main_operator, inventaris;
 
-{$R *.dfm}
+
 
 procedure TForm7.Button1Click(Sender: TObject);
 begin
-close;
+  hide;
 Form5.Show;
 end;
 

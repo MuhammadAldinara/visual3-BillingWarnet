@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 2137
-  Top = 159
+  Left = 2089
+  Top = 198
   Width = 957
   Height = 519
   Caption = 'WAR NET - USER'
@@ -359,12 +359,15 @@ object Form5: TForm5
       end
       object ransaksi1: TMenuItem
         Caption = 'Transaksi'
+        OnClick = ransaksi1Click
       end
       object Inventaris1: TMenuItem
         Caption = 'Inventaris'
+        OnClick = Inventaris1Click
       end
       object Kantin1: TMenuItem
         Caption = 'Kantin'
+        OnClick = Kantin1Click
       end
     end
     object Profil1: TMenuItem

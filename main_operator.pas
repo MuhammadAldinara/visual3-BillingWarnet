@@ -80,6 +80,9 @@ type
     procedure BtnUbahClick(Sender: TObject);
     procedure BtnCetakClick(Sender: TObject);
     procedure Operator1Click(Sender: TObject);
+    procedure Inventaris1Click(Sender: TObject);
+    procedure ransaksi1Click(Sender: TObject);
+    procedure Kantin1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,7 +94,7 @@ var
 id : string;
 implementation
 
-uses Math, userInfo, login, warnet_operator;
+uses Math, login, warnet_operator, Unit7, Unit8, kantinn, Unit10;
 
 {$R *.dfm}
 
@@ -388,5 +391,22 @@ Form6.Show;
 
 end;
 
+
+procedure TForm5.Inventaris1Click(Sender: TObject);
+begin
+  hide; Form10.Show;
+end;
+
+procedure TForm5.ransaksi1Click(Sender: TObject);
+begin
+hide;
+Form8.Show;
+end;
+
+procedure TForm5.Kantin1Click(Sender: TObject);
+begin
+hide;
+Form9.Show;
+end;
 
 end.
