@@ -60,7 +60,14 @@ type
     Button3: TButton;
     frxreport2: TfrxReport;
     frxdbdtst1: TfrxDBDataset;
-    edtOp: TEdit;
+    con3: TZConnection;
+    zqry3: TZQuery;
+    ds3: TDataSource;
+    dbgrd3: TDBGrid;
+    con4: TZConnection;
+    zqry4: TZQuery;
+    ds4: TDataSource;
+    Label11: TLabel;
     procedure FormShow(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure Button2Click(Sender: TObject);
@@ -394,7 +401,8 @@ end;
 
 procedure TForm5.Inventaris1Click(Sender: TObject);
 begin
-  hide; Form10.Show;
+  hide;
+  Form10.Show;
 end;
 
 procedure TForm5.ransaksi1Click(Sender: TObject);

@@ -1,10 +1,10 @@
 object Form9: TForm9
-  Left = 2180
-  Top = 169
+  Left = 2196
+  Top = 184
   Width = 514
   Height = 492
   Caption = 'WAR NET - KANTIN'
-  Color = clBtnFace
+  Color = clAqua
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, DB, ZAbstractRODataset, ZAbstractDataset,
-  ZDataset, ZAbstractConnection, ZConnection, Grids, DBGrids, Buttons;
+  ZDataset, ZAbstractConnection, ZConnection, Grids, DBGrids, Buttons,
+  Menus;
 
 type
   TForm1 = class(TForm)

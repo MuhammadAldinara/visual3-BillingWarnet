@@ -63,7 +63,9 @@ else
 begin
 hide;
 Form5.Show;
-Form5.edtOp.Text := edt1.Text;
+
+Form5.zqry4.SQL.Text := 'SELECT id_op, nama, username FROM operator WHERE username='+QuotedStr(edt1.Text);
+Form5.zqry4.Active := True;
 end;
 end;
 end;

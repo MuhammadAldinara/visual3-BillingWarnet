@@ -1,8 +1,8 @@
 object Form5: TForm5
-  Left = 2089
-  Top = 198
+  Left = 2094
+  Top = 158
   Width = 957
-  Height = 519
+  Height = 554
   Caption = 'WAR NET - USER'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -28,9 +28,16 @@ object Form5: TForm5
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object Label11: TLabel
+    Left = 840
+    Top = 56
+    Width = 51
+    Height = 13
+    Caption = 'Operator :'
+  end
   object grp1: TGroupBox
     Left = 552
-    Top = 96
+    Top = 144
     Width = 345
     Height = 336
     Caption = 'Tambah Billing'
@@ -126,7 +133,7 @@ object Form5: TForm5
   end
   object grp2: TGroupBox
     Left = 24
-    Top = 96
+    Top = 144
     Width = 521
     Height = 336
     Caption = 'User'
@@ -276,13 +283,19 @@ object Form5: TForm5
       OnClick = Button3Click
     end
   end
-  object edtOp: TEdit
-    Left = 24
-    Top = 64
-    Width = 121
-    Height = 21
+  object dbgrd3: TDBGrid
+    Left = 592
+    Top = 72
+    Width = 305
+    Height = 65
+    DataSource = ds4
     Enabled = False
     TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -297,8 +310,8 @@ object Form5: TForm5
     LibraryLocation = 
       'E:\KULIAH\Semester 5\pemrograman visual 3\tugas\Billing Warnet\l' +
       'ibmysql.dll'
-    Left = 552
-    Top = 16
+    Left = 168
+    Top = 72
   end
   object zqry1: TZQuery
     Connection = con1
@@ -306,13 +319,13 @@ object Form5: TForm5
     SQL.Strings = (
       'select * from billing')
     Params = <>
-    Left = 584
-    Top = 16
+    Left = 200
+    Top = 72
   end
   object ds1: TDataSource
     DataSet = zqry1
-    Left = 616
-    Top = 16
+    Left = 232
+    Top = 72
   end
   object con2: TZConnection
     ControlsCodePage = cGET_ACP
@@ -345,7 +358,7 @@ object Form5: TForm5
     Top = 16
   end
   object mm1: TMainMenu
-    Left = 368
+    Left = 280
     Top = 16
     object WarNet1: TMenuItem
       Caption = 'WarNet'
@@ -399,7 +412,7 @@ object Form5: TForm5
       'begin'
       ''
       'end.')
-    Left = 424
+    Left = 320
     Top = 16
     Datasets = <
       item
@@ -679,7 +692,66 @@ object Form5: TForm5
     UserName = 'frxdbdtst1'
     CloseDataSource = False
     DataSource = ds2
-    Left = 480
+    Left = 360
     Top = 16
+  end
+  object con3: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'billing_warnet'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'E:\KULIAH\Semester 5\pemrograman visual 3\tugas\Billing Warnet\l' +
+      'ibmysql.dll'
+    Left = 280
+    Top = 72
+  end
+  object zqry3: TZQuery
+    Connection = con3
+    SQL.Strings = (
+      'select * from transaksi')
+    Params = <>
+    Left = 312
+    Top = 72
+  end
+  object ds3: TDataSource
+    DataSet = zqry3
+    Left = 344
+    Top = 72
+  end
+  object con4: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'billing_warnet'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'E:\KULIAH\Semester 5\pemrograman visual 3\tugas\Billing Warnet\l' +
+      'ibmysql.dll'
+    Left = 384
+    Top = 72
+  end
+  object zqry4: TZQuery
+    Connection = con4
+    Active = True
+    SQL.Strings = (
+      'select * from operator')
+    Params = <>
+    Left = 416
+    Top = 72
+  end
+  object ds4: TDataSource
+    DataSet = zqry4
+    Left = 448
+    Top = 72
   end
 end

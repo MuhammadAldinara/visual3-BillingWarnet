@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 2221
-  Top = 207
+  Left = 2277
+  Top = 215
   Width = 250
   Height = 238
   Caption = 'WAR NET'
@@ -54,6 +54,7 @@ object Form1: TForm1
     Width = 177
     Height = 41
     DataSource = ds1
+    Enabled = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
