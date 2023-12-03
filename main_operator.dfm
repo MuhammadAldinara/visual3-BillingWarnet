@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 2094
-  Top = 158
+  Left = 2119
+  Top = 136
   Width = 957
   Height = 554
   Caption = 'WAR NET - USER'
@@ -385,6 +385,7 @@ object Form5: TForm5
     end
     object Profil1: TMenuItem
       Caption = 'Profil'
+      OnClick = Profil1Click
     end
     object Logout1: TMenuItem
       Caption = 'Logout'
@@ -713,6 +714,7 @@ object Form5: TForm5
   end
   object zqry3: TZQuery
     Connection = con3
+    Active = True
     SQL.Strings = (
       'select * from transaksi')
     Params = <>
@@ -753,5 +755,9 @@ object Form5: TForm5
     DataSet = zqry4
     Left = 448
     Top = 72
+  end
+  object tmr1: TTimer
+    Left = 416
+    Top = 16
   end
 end

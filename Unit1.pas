@@ -44,7 +44,7 @@ var
 implementation
 
 uses
-  login;
+  login, uKantin;
 
 {$R *.dfm}
 
@@ -180,7 +180,7 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-
+Form11.Show;
 end;
 
 //procedure TForm1.AddTime;

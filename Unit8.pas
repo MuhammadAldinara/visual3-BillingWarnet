@@ -33,6 +33,17 @@ type
     dbgrd1: TDBGrid;
     frxreport2: TfrxReport;
     frxdbdtst1: TfrxDBDataset;
+    con2: TZConnection;
+    zqry2: TZQuery;
+    ds2: TDataSource;
+    grp2: TGroupBox;
+    BtnHapusK: TButton;
+    BtnCetakK: TButton;
+    DBGrid1: TDBGrid;
+    Label6: TLabel;
+    edtIDK: TEdit;
+    frxreport3: TfrxReport;
+    frxdbdtst2: TfrxDBDataset;
     procedure posisiAwal;
     procedure editBersih;
     procedure editEnable;
@@ -45,6 +56,9 @@ type
     procedure dbgrd1CellClick(Column: TColumn);
     procedure BtnCetakClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure BtnHapusKClick(Sender: TObject);
+    procedure BtnCetakKClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,6 +83,8 @@ begin
   edtOP.Text := '';
   edtUser.Text := '';
   edtBilling.Text := '';
+
+  edtIDK.Text := '';
 end;
 
 procedure TForm8.editEnable;
@@ -93,6 +109,8 @@ BtnSimpan.Enabled := False;
 BtnUbah.Enabled := False;
 BtnHapus.Enabled := False;
 BtnCetak.Enabled := True;
+
+BtnHapusK.Enabled := False;
 end;
 
 procedure TForm8.Button2Click(Sender: TObject);
@@ -216,6 +234,42 @@ procedure TForm8.Button1Click(Sender: TObject);
 begin
 hide;
 Form5.Show;
+end;
+
+procedure TForm8.DBGrid1CellClick(Column: TColumn);
+begin
+  id:=zqry2.Fields[0].AsString;
+
+  edtIDK.Text := zqry2.Fields[0].AsString;
+
+  BtnHapusK.Enabled := True;
+end;
+
+procedure TForm8.BtnHapusKClick(Sender: TObject);
+begin
+if MessageDlg('APAKAH ANDA YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+id:=DBGrid1.DataSource.DataSet.FieldByName('id_tk').AsString;
+zqry2.SQL.Clear;
+zqry2.SQL.Add(' delete from transaksi_kantin where id_tk ="'+id+'"');
+zqry2.ExecSQL;
+
+zqry2.SQL.Clear;
+zqry2.SQL.Add('select * from transaksi_kantin');
+zqry2.Open;
+ShowMessage('DATA BERHASIL DIHAPUS');
+posisiAwal;
+zqry2.Refresh;
+end else
+begin
+ShowMessage('DATA BATAL DIHAPUS');
+posisiAwal;
+end;
+end;
+
+procedure TForm8.BtnCetakKClick(Sender: TObject);
+begin
+frxreport3.ShowReport();
 end;
 
 end.

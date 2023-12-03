@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 2277
-  Top = 215
-  Width = 250
+  Left = 2213
+  Top = 251
+  Width = 279
   Height = 238
   Caption = 'WAR NET'
   Color = clBtnFace
@@ -84,6 +84,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Kantin'
     TabOrder = 3
+    OnClick = Button3Click
   end
   object tmr1: TTimer
     OnTimer = tmr1Timer
@@ -103,8 +104,8 @@ object Form1: TForm1
     LibraryLocation = 
       'E:\KULIAH\Semester 5\pemrograman visual 3\tugas\Billing Warnet\l' +
       'ibmysql.dll'
-    Left = 200
-    Top = 32
+    Left = 208
+    Top = 16
   end
   object zqry1: TZQuery
     Connection = con1
@@ -113,7 +114,7 @@ object Form1: TForm1
       'select id_user, username from user')
     Params = <>
     Left = 200
-    Top = 64
+    Top = 56
   end
   object ds1: TDataSource
     DataSet = zqry1
@@ -122,7 +123,7 @@ object Form1: TForm1
   end
   object tmr2: TTimer
     OnTimer = tmr2Timer
-    Left = 200
-    Top = 24
+    Left = 216
+    Top = 128
   end
 end

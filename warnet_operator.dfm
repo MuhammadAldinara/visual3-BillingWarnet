@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 2059
-  Top = 156
+  Left = 2063
+  Top = 144
   Width = 1096
   Height = 525
   Caption = 'WAR NET - Operator'

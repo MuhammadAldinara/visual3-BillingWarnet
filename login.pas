@@ -36,7 +36,7 @@ var
 implementation
 
 uses
-  Unit1, registerUser, operator;
+  Unit1, registerUser, operator, uKantin;
 
 {$R *.dfm}
 
@@ -70,6 +70,7 @@ Form1.Label1.Caption := zqry1.Fields[4].AsString;
 
 Form1.zqry1.SQL.Text := 'SELECT id_user, username FROM user WHERE username='+QuotedStr(edt1.Text);
 Form1.zqry1.Active := True;
+Form11.edtUser.Text := zqry1.Fields[2].AsString;
 end;
 end;
 

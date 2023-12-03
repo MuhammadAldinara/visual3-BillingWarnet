@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 2196
-  Top = 184
+  Left = 2461
+  Top = 193
   Width = 514
   Height = 492
   Caption = 'WAR NET - KANTIN'

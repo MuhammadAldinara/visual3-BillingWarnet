@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
   ZAbstractConnection, ZConnection, Grids, DBGrids, Menus, frxClass,
-  frxDBSet;
+  frxDBSet, ExtCtrls;
 
 type
   TForm5 = class(TForm)
@@ -68,6 +68,7 @@ type
     zqry4: TZQuery;
     ds4: TDataSource;
     Label11: TLabel;
+    tmr1: TTimer;
     procedure FormShow(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure Button2Click(Sender: TObject);
@@ -90,6 +91,7 @@ type
     procedure Inventaris1Click(Sender: TObject);
     procedure ransaksi1Click(Sender: TObject);
     procedure Kantin1Click(Sender: TObject);
+    procedure Profil1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -101,7 +103,7 @@ var
 id : string;
 implementation
 
-uses Math, login, warnet_operator, Unit7, Unit8, kantinn, Unit10;
+uses Math, login, warnet_operator, Unit7, Unit8, kantinn, Unit10, profil;
 
 {$R *.dfm}
 
@@ -157,10 +159,10 @@ begin
 
   with zqry2 do
   begin
-    SQL.Clear;
-    SQL.Add('SELECT * FROM user WHERE username=' + QuotedStr(edtUsernameB.Text));
-    Open;
-  end;
+  SQL.Clear;
+  SQL.Add('SELECT * FROM user WHERE username = ' + QuotedStr(edtUsernameB.Text));
+  Open;
+end;
 
   if zqry2.RecordCount = 0 then
     ShowMessage('Maaf Username Tidak Ditemukan')
@@ -188,8 +190,9 @@ begin
         SQL.Clear;
         SQL.Add('UPDATE user SET billing = ' + QuotedStr(hasil) + ' WHERE username = ' + QuotedStr(edtUsernameB.Text));
         ExecSQL;
-        Refresh;
       end;
+
+      zqry2.Refresh;
 
       ShowMessage('BERHASIL!');
       posisiAwal;
@@ -415,6 +418,12 @@ procedure TForm5.Kantin1Click(Sender: TObject);
 begin
 hide;
 Form9.Show;
+end;
+
+procedure TForm5.Profil1Click(Sender: TObject);
+begin
+hide;
+Form12.show
 end;
 
 end.
